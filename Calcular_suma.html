@@ -49,6 +49,7 @@
             </div>
             <input class="btn-suma" type="button" value="Calcular suma"  onclick="calcularSuma()">
             <input class="btn-resta" type="button" value="Calcular resta"  onclick="calcularResta()">
+            <input class="btn-divi" type="button" value="Calcular resta"  onclick="calcularDivision()">
         </form>
 
         <div id="resultado"></div>
@@ -85,6 +86,23 @@ function calcularResta() {
 
         // Mostrar el resultado en el elemento con id "resultado"
         document.getElementById("resultado").innerHTML = "El resultado de la resta es: " + resta;
+    } else {
+        // Mostrar un mensaje de error si los valores no son números
+        document.getElementById("resultado").innerHTML = "Por favor, ingrese dos números válidos.";
+    }
+}
+function calcularDivision() {
+    // Obtener los valores de los campos de entrada
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+
+    // Verificar si ambos valores son números
+    if (!isNaN(num1) && !isNaN(num2)) {
+        // Calcular la suma
+        var divi = num1 / num2;
+
+        // Mostrar el resultado en el elemento con id "resultado"
+        document.getElementById("resultado").innerHTML = "El resultado de la división es: " + divi;
     } else {
         // Mostrar un mensaje de error si los valores no son números
         document.getElementById("resultado").innerHTML = "Por favor, ingrese dos números válidos.";
